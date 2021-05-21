@@ -56,7 +56,7 @@ public class Game extends Window{
                         else if(activeKeys.contains(KeyCode.RIGHT)) move = 1;
                         else if(activeKeys.contains(KeyCode.DOWN)) move = 2;
                         else if(activeKeys.contains(KeyCode.UP)) move = 3;
-                        Life.drawLifes(gc);
+                        Life.drawLives(gc);
                         foods.showFood(gc);
                         worm.animateMove(move, gc);
                         if (worm.collisionMap() || Life.getLife() == 0) {

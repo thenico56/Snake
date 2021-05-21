@@ -14,6 +14,11 @@ public class Life extends Sprite {
     private static final String IMAGE_PATH = "assets/images/life/heart.png";
     private static final ArrayList<Life> lifes = new ArrayList<>();
 
+    /**
+     * In this constructor we will assign the corresponding image
+     * @param x - Position X of the object
+     * @param y - Position Y of the object
+     */
     public Life(int x, int y) {
         super(LIFE_WIDTH, LIFE_HEIGHT, x, y);
         try {
@@ -23,6 +28,9 @@ public class Life extends Sprite {
         }
     }
 
+    /**
+     * In this constructor we initialize the array lives to 3 lives
+     */
     private Life() {
         super();
         lifes.add(new Life(890, 20));
@@ -30,15 +38,30 @@ public class Life extends Sprite {
         lifes.add(new Life(990, 20));
     }
 
-    public static void drawLifes(GraphicsContext gc) { lifes.forEach(l -> l.drawObj(gc)); }
+    /**
+     * In this function we draw all the lives
+     * @param gc - Object GraphicsContext to be able to draw the object
+     */
+    public static void drawLives(GraphicsContext gc) { lifes.forEach(l -> l.drawObj(gc)); }
 
+    /**
+     * In this function we remove one life
+     */
     public static void putOffLife() {
         lifes.remove(0);
     }
 
+    /**
+     * @return - Total lives in the array
+     */
     public static int getLife() {
         return lifes.size();
     }
 
-    public static void initialize() { new Life();}
+    /**
+     * We initialize the object life to use the statics methods in the others classes
+     */
+    public static void initialize() {
+        lifes.clear();
+        new Life();}
 }

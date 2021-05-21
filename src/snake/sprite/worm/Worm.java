@@ -15,6 +15,11 @@ public class Worm extends Sprite {
     private final int[] spriteX = new int[]{0,0,0,0};
     private final int[] spriteY = new int[]{330,110,220,0};
 
+    /**
+     * In this constructor we will assign the corresponding image
+     * @param x - Position X of the object
+     * @param y - Position Y of the object
+     */
     public Worm(int x, int y) {
         super(BODY_WIDTH, BODY_HEIGHT, x, y);
         try {
@@ -24,6 +29,11 @@ public class Worm extends Sprite {
         }
     }
 
+    /**
+     * Move the worm with the correspondent position image
+     * @param movement - Actual move
+     * @param gc - Object GraphicsContext to be able to draw the object
+     */
     public void animateMove(int movement, GraphicsContext gc) {
         if (actualMove != movement) {
             actualMove = movement;

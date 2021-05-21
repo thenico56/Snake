@@ -25,16 +25,29 @@ public class Sprite {
 
     }
 
-    //This funtion 
+    /**
+     * This function we move the sprite to new position
+     */
     public void moveTo(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * This function we draw the object in the position
+     * @param gc - Object GraphicsContext to be able to draw the object
+     */
     public void drawObj(GraphicsContext gc) {
         gc.drawImage(spriteImage, x, y, width, height);
     }
 
+    /**
+     * In this function we verify the movement and change the x and y value for others and finally we move the object to the new position
+     * @param movement - Movement to the object
+     * @param gc - Object GraphicsContext to be able to draw the object
+     * @param spriteX - Correspondent position X image
+     * @param spriteY - Correspondent position Y image
+     */
     public void move(int movement, GraphicsContext gc, int spriteX, int spriteY) {
         int newX = x;
         int newY = y;
@@ -62,10 +75,19 @@ public class Sprite {
         drawSpriteObj(gc);
     }
 
+    /**
+     * Int this function we draw the sprite object whit hes correspondent position image
+     * @param gc - Object GraphicsContext to be able to draw the object
+     */
     public void drawSpriteObj(GraphicsContext gc) {
         gc.drawImage(spriteImage, spriteX, spriteY, width, height, x, y, width, height);
     }
 
+    /**
+     * In this function we check the collision to the actual sprite object with others sprites
+     * @param s - This parameter is other sprite
+     * @return - We return one boolean true or false depending on whether it collides or not
+     */
     public boolean collision(Sprite s) {
         return this.x > s.x &&
                 this.x < s.x + s.width/2 &&
@@ -73,6 +95,10 @@ public class Sprite {
                 this.y < s.y + s.height/2;
     }
 
+    /**
+     * In this function we check the collision with the map
+     * @return - We return one boolean true or false depending on whether it collides or not
+     */
     public boolean collisionMap() {
         return this.x == Window.WIDTH -115 || this.x == 5 || this.y == Window.HEIGHT -120 || this.y == 170;
     }

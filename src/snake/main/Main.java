@@ -1,7 +1,12 @@
-/*The Snake is a javafx game where we can move a worm that can move and eat random
-apples that appear. You lose if it touches the map limits. When the
-worm eats an apple, it gives score.
-* */
+/**
+ * The Snake is a javafx game where we can move a worm that can move and eat random
+ * apples that appear. You lose if it touches the map limits. When the
+ * worm eats an apple, it gives score.
+ * @author Andrei Nicolae Depner
+ * @version 1.3
+ * @see https://iessanvicente.com
+ * @since 21/05/2021
+ */
 package snake.main;
 
 import javafx.application.Application;

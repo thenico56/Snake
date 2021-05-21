@@ -60,7 +60,6 @@ public class Welcome extends Window {
         play.setOnMouseClicked(mouseEvent -> {
             try {
                 mediaPlayer.stop();
-                Main.scenes[1] = new Game();
                 Main.setScene(Main.GAME_SCENE);
             } catch (IOException e) {
                 e.printStackTrace();

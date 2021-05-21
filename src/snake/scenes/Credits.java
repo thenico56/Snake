@@ -74,12 +74,13 @@ public class Credits extends Window {
 
         //Create Button play
         restart.setMaxSize(100, 10);
-        restart.setTranslateX(120);
+        restart.setTranslateX(80);
         restart.setTranslateY(0);
         restart.setText("RESTART");
         restart.setOnMouseClicked(mouseEvent -> {
             try {
                 Main.scenes[2] = new Credits();
+                Main.scenes[1] = new Game();
                 Main.setScene(Main.WELCOME_SCENE);
             } catch (IOException e) {
                 e.printStackTrace();
